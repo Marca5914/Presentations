@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Probiotics in Preterm Infants: Current Evidence</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f4f8;
+        }
+        .slide {
+            min-height: 70vh; /* Minimum height for content area */
+        }
+        /* Custom styles for better presentation */
+        h1, h2, h3 {
+            font-weight: 700;
+        }
+        .slide-content ul {
+            list-style-position: outside;
+            padding-left: 1.5rem;
+        }
+        .slide-content li {
+            margin-bottom: 0.75rem;
+        }
+        .stat-highlight {
+            color: #2563eb; /* A highlight color for stats */
+            font-weight: 600;
+        }
+        .caveat-box {
+            background-color: #fffbeb;
+            border-left: 4px solid #facc15;
+            padding: 1rem;
+            margin-top: 1rem;
+        }
+        .nav-button {
+            transition: all 0.2s ease-in-out;
+        }
+        .nav-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+        .dot {
+            transition: all 0.2s ease-in-out;
+        }
+        .references-list {
+            font-size: 0.8rem;
+            line-height: 1.4;
+            column-count: 1;
+        }
+        @media (min-width: 1024px) {
+            .references-list {
+                column-count: 2;
+                column-gap: 2.5rem;
+            }
+        }
+        /* Timeline Styles */
+        .timeline-container {
+            position: relative;
+            padding: 2rem 0;
+        }
+        .timeline-line {
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background-color: #e5e7eb; /* gray-200 */
+            transform: translateX(-50%);
+        }
+        .timeline-item {
+            position: relative;
+            width: 50%;
+            padding-bottom: 2rem;
+        }
+        .timeline-item:nth-child(odd) {
+            left: 0;
+            padding-right: 2rem;
+            text-align: right;
+        }
+        .timeline-item:nth-child(even) {
+            left: 50%;
+            padding-left: 2rem;
+        }
+        .timeline-dot {
+            position: absolute;
+            top: 0;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background-color: #ffffff;
+            border: 4px solid #3b82f6; /* blue-500 */
+            z-index: 10;
+        }
+        .timeline-item:nth-child(odd) .timeline-dot {
+            right: -8px;
+            transform: translateX(50%);
+        }
+        .timeline-item:nth-child(even) .timeline-dot {
+            left: -8px;
+            transform: translateX(-50%);
+        }
+        .timeline-content {
+            background-color: #f9fafb; /* gray-50 */
+            padding: 1rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        .timeline-date {
+            font-weight: 600;
+            color: #3b82f6; /* blue-500 */
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body class="flex flex-col items-center justify-center min-h-screen p-4 md:p-6">
+
+    <div id="presentation-container" class="w-full max-w-5xl bg-white rounded-2xl shadow-2xl overflow-hidden">
+        <!-- Slides Container -->
+        <div class="p-6 md:p-10 lg:p-12 slide-content">
+
+            <!-- Slide 1: Title -->
+            <div id="slide-1" class="slide flex flex-col items-center justify-center text-center">
+                <h1 class="text-3xl md:text-4xl lg:text-5xl text-gray-800 mb-4">Probiotics in Preterm Infants: Current Evidence and Clinical Implications</h1>
+                <p class="text-xl md:text-2xl text-gray-600">A Review for Medical Professionals</p>
+            </div>
+
+            <!-- Slide 2: Introduction -->
+            <div id="slide-2" class="slide hidden">
+                <h2 class="text-2xl md:text-3xl text-gray-800 mb-6 border-b pb-3">Introduction: The Vulnerable Preterm Gut</h2>
+                <p class="mb-4 text-gray-700">Preterm infants, particularly those with very low birth weight (VLBW) (&lt;1500g) or extremely low birth weight (ELBW) (&lt;1000g), face a high risk of severe gastrointestinal complications and mortality.</p>
+                <h3 class="text-xl font-semibold text-gray-700 mb-3">Key Contributing Factors:</h3>
+                <ul class="list-disc text-gray-700 mb-4">
+                    <li>Immature immune and gastrointestinal systems, making them susceptible to complications.</li>
+                    <li>Delayed postnatal acquisition of diverse bowel flora, leading to intestinal dysbiosis.</li>
+                </ul>
+                <p class="mb-4 text-gray-700">These vulnerabilities increase the incidence of devastating conditions such as:</p>
+                <ul class="list-disc text-gray-700 mb-4">
+                    <li><strong>Necrotising Enterocolitis (NEC):</strong> A severe intestinal inflammation. It is a major cause of mortality and morbidity, with mortality rates ranging from 15% to 30%.</li>
+                    <li><strong>Late-Onset Sepsis (LOS):</strong> A significant cause of mortality and morbidity in preterm infants.</li>
+                </ul>
+                <p class="text-gray-700 bg-blue-50 p-4 rounded-lg">Probiotics, defined as live microorganisms that confer a health benefit when administered in adequate amounts, have emerged as a potential strategy to modulate the intestinal microbiome and improve outcomes in this vulnerable population. The underlying hypothesis is that by fostering a gut flora akin to that of healthy term infants, intestinal barrier function can be enhanced, thereby reducing the incidence of NEC and LOS.</p>
+            </div>
+            
+            <!-- Slide 3: History Timeline -->
+            <div id="slide-3" class="slide hidden">
+                <h2 class="text-2xl md:text-3xl text-gray-800 mb-2 border-b pb-3">The Journey of Probiotics in Preterm Care</h2>
+                <div class="timeline-container">
+                    <div class="timeline-line"></div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <p class="timeline-date">1960s - 1999</p>
+                            <p class="text-sm text-gray-700">Concept of "probiotics" emerges. Early observational reports (1999) and RCTs (1997) show initial promise in reducing NEC.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <p class="timeline-date">Early 2000s</p>
+                            <p class="text-sm text-gray-700">First single-site RCTs report significant reductions in NEC, LOS, and death with probiotic mixtures, building early momentum.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <p class="timeline-date">2010s</p>
+                            <p class="text-sm text-gray-700">Multiple meta-analyses suggest benefit, but the large, rigorously conducted PiPS trial (2016) finds no evidence of benefit, creating controversy.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <p class="timeline-date">2019 - 2025</p>
+                            <p class="text-sm text-gray-700">Network meta-analyses provide nuance, suggesting multi-strain combinations are most effective. Focus shifts to strain-specific benefits (*B. infantis*, *L. rhamnosus GG*).</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <p class="timeline-date">Current Status</p>
+                            <p class="text-sm text-gray-700">Routine use remains controversial. Despite strong evidence for NEC reduction, concerns about safety, quality control, and optimal protocols persist.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 4: All-Cause Mortality -->
+            <div id="slide-4" class="slide hidden">
+                <h2 class="text-2xl md:text-3xl text-gray-800 mb-6 border-b pb-3">Impact on All-Cause Mortality</h2>
+                <p class="mb-4 text-gray-700">Multiple systematic reviews and meta-analyses consistently suggest that probiotic supplementation reduces all-cause mortality in preterm or low birth weight (LBW) infants.</p>
+                <h3 class="text-xl font-semibold text-gray-700 mb-3">Specific Findings:</h3>
+                <ul class="list-disc text-gray-700 space-y-3">
+                    <li>A large Cochrane meta-analysis (54 trials, 10,484 infants) concluded that probiotics probably reduce all-cause mortality slightly before hospital discharge (<span class="stat-highlight">Risk Ratio [RR] 0.77, 95% Confidence Interval [CI] 0.66 to 0.90</span>). The NNTB was 50 (95% CI 50 to 100).</li>
+                    <li>A meta-analysis of 23 RCTs (N = 4686) noted a significant reduction in death with Lactobacillus (<span class="stat-highlight">RR 0.48, 95% CI 0.36–0.64; P &lt; 0.00001</span>).</li>
+                    <li>Routine probiotic supplementation (RPS) in non-RCTs was associated with a significantly reduced all-cause mortality (<span class="stat-highlight">Odds Ratio [OR]: 0.77; 95% CI: 0.68, 0.88</span>).</li>
+                    <li>Supplementation with Bifidobacterium breve BBG-001 demonstrated a reduction in overall mortality and morbidity (<span class="stat-highlight">OR = 0.74; 95% CI [0.62, 0.89]</span>).</li>
+                    <li>A systematic review of RCTs in India reported a reduced risk of mortality (<span class="stat-highlight">RR: 0.62 (95% CI: 0.41, 0.95)</span>).</li>
+                </ul>
+                <div class="caveat-box">
+                    <p class="font-semibold">Important Caveat:</p>
+                    <p class="text-gray-700">Evidence for extremely low birth weight (ELBW) neonates regarding mortality often lacks statistical significance, which may be attributed to a smaller number of studies focused on this highly vulnerable subgroup.</p>
+                </div>
+            </div>
+            
+            <!-- Slide 5: NEC -->
+            <div id="slide-5" class="slide hidden">
+                <h2 class="text-2xl md:text-3xl text-gray-800 mb-6 border-b pb-3">Impact on Necrotising Enterocolitis (NEC)</h2>
+                 <p class="mb-4 text-gray-700">Probiotics are widely associated with a significant reduction in the incidence of NEC, particularly severe NEC (Bell stage II or higher).</p>
+                <h3 class="text-xl font-semibold text-gray-700 mb-3">Key Evidence:</h3>
+                <ul class="list-disc text-gray-700 space-y-3 mb-4">
+                    <li>A recent Cochrane review (57 trials, 10,918 infants) indicated that probiotics may reduce the risk of NEC (<span class="stat-highlight">RR 0.54, 95% CI 0.46 to 0.65</span>). The NNTB for NEC was 33 (95% CI 25 to 50).</li>
+                    <li>Lactobacillus alone (<span class="stat-highlight">RR 0.34, 95% CI 0.25–0.46</span>) and combinations of Lactobacillus spp. and Bifidobacterium spp. (<span class="stat-highlight">OR, 0.35; 95% CI, 0.20–0.59</span>) were particularly effective.</li>
+                    <li>Routine probiotic supplementation (RPS) in non-RCTs showed a significant reduction in NEC ≥ Stage II (<span class="stat-highlight">OR: 0.60; 95% CI: 0.50, 0.73</span>).</li>
+                    <li>Bifidobacterium breve BBG-001 specifically reduced NEC stage >2 (<span class="stat-highlight">OR = 0.66; 95% CI [0.47, 0.94]</span>).</li>
+                </ul>
+                <div class="bg-gray-50 p-4 rounded-lg">
+                    <h3 class="text-xl font-semibold text-gray-700 mb-2">Proposed Mechanisms for NEC Reduction:</h3>
+                    <ul class="list-disc text-gray-700">
+                        <li>Improving immunity and reducing inflammation.</li>
+                        <li>Enhancing tissue repair and gut barrier function.</li>
+                        <li>Correcting intestinal dysbiosis.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Slide 6: Late-Onset Sepsis (LOS) -->
+            <div id="slide-6" class="slide hidden">
+                <h2 class="text-2xl md:text-3xl text-gray-800 mb-6 border-b pb-3">Impact on Late-Onset Sepsis (LOS)</h2>
+                <p class="mb-4 text-gray-700">The evidence regarding the effect of probiotics on late-onset sepsis (LOS) in preterm infants is less consistent than for NEC.</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="bg-red-50 p-4 rounded-lg border border-red-200">
+                        <h3 class="text-xl font-semibold text-red-800 mb-3">Conflicting Findings:</h3>
+                        <ul class="list-disc text-gray-700 space-y-2">
+                            <li>Some meta-analyses, including a recent Cochrane review, indicate probiotics probably have <span class="font-bold">little or no effect</span> on the risk of LOS (<span class="stat-highlight">RR 0.89, 95% CI 0.82 to 0.97</span>).</li>
+                            <li>An older Cochrane review (2008) and a network meta-analysis also found <span class="font-bold">no significant difference</span> in sepsis incidence.</li>
+                        </ul>
+                    </div>
+                    <div class="bg-green-50 p-4 rounded-lg border border-green-200">
+                        <h3 class="text-xl font-semibold text-green-800 mb-3">Evidence Suggesting Reduction:</h3>
+                        <ul class="list-disc text-gray-700 space-y-2">
+                            <li>A large meta-analysis (37 RCTs, N = 9416) showed probiotics <span class="font-bold">significantly decreased the risk</span> of LOS (<span class="stat-highlight">RR, 0.86; 95% CI, 0.78–0.94</span>).</li>
+                            <li>RPS in non-RCTs was associated with a <span class="font-bold">significantly reduced</span> LOS (<span class="stat-highlight">OR: 0.85; 95% CI: 0.74, 0.97</span>).</li>
+                            <li>Bifidobacterium breve BBG-001 has been shown to <span class="font-bold">significantly reduce</span> sepsis (<span class="stat-highlight">OR = 0.71</span>).</li>
+                            <li>Meta-analyses in LMICs also reported a <span class="font-bold">reduced risk</span> of LOS (<span class="stat-highlight">RR 0.80</span>).</li>
+                        </ul>
+                    </div>
+                </div>
+                 <div class="caveat-box mt-6">
+                    <p class="text-gray-700">For ELBW neonates, specific studies indicate no significant difference in LOS incidence with probiotic use.</p>
+                </div>
+            </div>
+
+            <!-- Slide 7: Mechanisms of Action -->
+            <div id="slide-7" class="slide hidden">
+                <h2 class="text-2xl md:text-3xl text-gray-800 mb-6 border-b pb-3">Mechanisms of Action</h2>
+                <p class="mb-4 text-gray-700">Probiotics are believed to exert their beneficial effects in preterm infants through several key mechanisms:</p>
+                <div class="space-y-4">
+                    <div class="p-4 bg-blue-50 rounded-lg">
+                        <h3 class="font-semibold text-lg text-blue-800">Gut Microbiota Modulation</h3>
+                        <p class="text-gray-700">Increased abundance of supplemented strains (Bifidobacterium, Lactobacillus) and decrease in potential pathogens (Clostridium, Klebsiella).</p>
+                    </div>
+                    <div class="p-4 bg-green-50 rounded-lg">
+                        <h3 class="font-semibold text-lg text-green-800">Enhancing Intestinal Barrier Function</h3>
+                        <p class="text-gray-700">Strengthens the intestinal mucosal barrier and improves its integrity, preventing bacterial translocation.</p>
+                    </div>
+                    <div class="p-4 bg-indigo-50 rounded-lg">
+                        <h3 class="font-semibold text-lg text-indigo-800">Modulating Immune Responses</h3>
+                        <p class="text-gray-700">Regulates immune pathways (TLR4, NF-kB) and inflammatory cytokines for a balanced immune response.</p>
+                    </div>
+                    <div class="p-4 bg-yellow-50 rounded-lg">
+                        <h3 class="font-semibold text-lg text-yellow-800">Direct Inhibition of Pathogens</h3>
+                        <p class="text-gray-700">Competes for nutrients and adhesion sites (niche exclusion) and produces antimicrobial metabolites.</p>
+                    </div>
+                     <div class="p-4 bg-purple-50 rounded-lg">
+                        <h3 class="font-semibold text-lg text-purple-800">Improving Feeding Tolerance</h3>
+                        <p class="text-gray-700">Can improve feeding tolerance and reduce the time to reach full enteral feeds (TFF), improving nutritional outcomes.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 8: Strain Specificity -->
+            <div id="slide-8" class="slide hidden">
+                <h2 class="text-2xl md:text-3xl text-gray-800 mb-6 border-b pb-3">Strain Specificity and Combinations</h2>
+                <p class="mb-4 text-gray-700">A critical aspect of probiotic efficacy is its <span class="font-bold">strain-specific nature</span>, meaning that benefits can vary significantly between different species and even strains within the same species.</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <h3 class="text-xl font-semibold text-gray-700 mb-3">Multi-Strain & Combinations</h3>
+                        <ul class="list-disc text-gray-700 space-y-2">
+                            <li>A combination of <span class="font-semibold">Lactobacillus + Bifidobacterium</span> species consistently showed moderate- or high-quality evidence of reduced all-cause mortality (<span class="stat-highlight">OR, 0.56</span>) and severe NEC (<span class="stat-highlight">OR, 0.35</span>).</li>
+                            <li>Multi-strain RPS was reported as more effective than single-strain supplementation in one non-RCT meta-analysis.</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold text-gray-700 mb-3">Specific Strains with Noted Efficacy</h3>
+                        <ul class="list-disc text-gray-700 space-y-2">
+                            <li>Lactobacillus reuteri</li>
+                            <li>Lactobacillus rhamnosus (LGG)</li>
+                            <li>Bifidobacterium animalis subspecies lactis</li>
+                            <li>Bifidobacterium breve BBG-001</li>
+                            <li>Probiotics including <span class="font-semibold">Bifidobacterium infantis</span> may offer greater benefits.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Slide 9: Safety Concerns -->
+            <div id="slide-9" class="slide hidden">
+                <h2 class="text-2xl md:text-3xl text-gray-800 mb-6 border-b pb-3">Safety Concerns</h2>
+                <p class="mb-4 text-gray-700">While many studies report no significant adverse effects, concerns about safety, particularly <span class="font-bold">probiotic sepsis</span>, persist and hinder widespread adoption.</p>
+                <div class="bg-red-50 border border-red-200 p-4 rounded-lg mb-4">
+                    <h3 class="text-xl font-semibold text-red-800 mb-2">Probiotic Sepsis</h3>
+                    <p class="text-gray-700">A recent systematic review identified 16 reports involving 32 preterm infants. The most commonly isolated organisms were Bifidobacterium (n=19), Lactobacillus (n=10), and Saccharomyces (n=3). Most cases recovered, with two reported neonatal deaths.</p>
+                </div>
+                <h3 class="text-xl font-semibold text-gray-700 mb-3">Identified Risk Factors:</h3>
+                <ul class="list-disc text-gray-700 space-y-2 mb-4">
+                    <li><span class="font-semibold">Compromised gut barrier:</span> Immature/damaged gut allows for potential bacterial translocation.</li>
+                    <li><span class="font-semibold">Product contamination:</span> A documented risk during manufacturing or administration.</li>
+                    <li><span class="font-semibold">Vulnerable populations:</span> Critically ill or ELBW infants are at higher risk.</li>
+                </ul>
+                <div class="caveat-box">
+                    <p class="font-semibold">Clinical Considerations:</p>
+                    <p class="text-gray-700">Caution is advised against initiating or continuing probiotics during suspected/proven LOS and NEC. The lack of FDA-regulated products and insufficient safety data for ELBW infants contribute to a cautious stance.</p>
+                </div>
+            </div>
+
+            <!-- Slide 10: Recommendations & Controversies -->
+            <div id="slide-10" class="slide hidden">
+                <h2 class="text-2xl md:text-3xl text-gray-800 mb-6 border-b pb-3">Current Recommendations and Controversies</h2>
+                <p class="mb-4 text-gray-700">Despite accumulating evidence, the routine use of probiotics in preterm infants remains controversial and highly variable across neonatal units worldwide.</p>
+                <h3 class="text-xl font-semibold text-gray-700 mb-3">Reasons for Controversy:</h3>
+                <ul class="list-disc text-gray-700 space-y-2 mb-6">
+                    <li><span class="font-semibold">Heterogeneity of trials:</span> Varies in participants, strains, doses, and outcomes.</li>
+                    <li><span class="font-semibold">Lack of clarity on optimal protocols:</span> No consensus on strain, dose, or timing.</li>
+                    <li><span class="font-semibold">Concerns about product quality and contamination.</span></li>
+                    <li><span class="font-semibold">Need for further robust research,</span> especially for ELBW infants.</li>
+                </ul>
+                <h3 class="text-xl font-semibold text-gray-700 mb-3">Varying Professional Stances:</h3>
+                <ul class="list-disc text-gray-700 space-y-2">
+                    <li><span class="text-green-700 font-semibold">RECOMMEND/CONDITIONAL:</span> American Pediatric Surgical Association, ESPGHAN, American Gastroenterological Association (AGA).</li>
+                    <li><span class="text-red-700 font-semibold">CAUTION AGAINST ROUTINE USE:</span> American Academy of Pediatrics (2021), citing lack of pharmaceutical-grade products and safety data for ELBW infants.</li>
+                </ul>
+            </div>
+
+            <!-- Slide 11: Conclusion -->
+            <div id="slide-11" class="slide hidden">
+                <h2 class="text-2xl md:text-3xl text-gray-800 mb-6 border-b pb-3">Conclusion</h2>
+                <ul class="list-disc text-gray-700 space-y-4">
+                    <li>Probiotic supplementation demonstrates <span class="font-bold">strong evidence for reducing NEC</span> and likely <span class="font-bold">reduces all-cause mortality</span> in preterm infants.</li>
+                    <li>The impact on <span class="font-bold">LOS remains less consistent</span>, with conflicting study results.</li>
+                    <li>The <span class="font-bold">strain-specific nature</span> of effects and potential benefits of multi-strain combinations are increasingly recognised.</li>
+                    <li>While generally safe, the rare but serious risk of <span class="font-bold">probiotic sepsis</span> necessitates careful consideration and rigorous safety protocols.</li>
+                    <li><span class="font-bold">Further high-quality, large-scale RCTs</span> focusing on specific strains, optimal dosages, and outcomes in ELBW infants are essential to inform routine clinical practice worldwide.</li>
+                </ul>
+            </div>
+
+            <!-- Slide 12: References -->
+            <div id="slide-12" class="slide hidden">
+                <h2 class="text-2xl md:text-3xl text-gray-800 mb-6 border-b pb-3">References</h2>
+                <ul class="references-list text-gray-600 space-y-3">
+                    <li>Ananthan, A., et al. (2024). Beneficial effects of Lactobacillus rhamnosus GG supplementation on necrotizing enterocolitis in preterm infants: A systematic review. npj Regenerative Medicine. https://doi.org/10.1038/s41430-024-01474-0</li>
+                    <li>Authors not explicitly named, but contributions include HB, AA, SP (2020). Systematic review of RCTs of probiotics for preterm infants in India. Indian Journal of Pediatrics, 87(10), 817–825. https://doi.org/10.1007/s12098-020-03223-0</li>
+                    <li>Batta, V. K., Rao, S. C., & Patole, S. K. (2023). Bifidobacterium infantis as a probiotic in preterm infants: a systematic review and meta-analysis. Pediatric Research, 94, 1887–1905. https://doi.org/10.1038/s41390-023-02716-w</li>
+                    <li>Chamberlain, R. (2015). Abstract: Statistical analysis methods for meta-analysis of probiotic trials in preterm infants. Journal of Pediatric Surgery.</li>
+                    <li>Costeloe, K., et al. (2016). Probiotics in Preterm infantS (PiPS) trial. National Institute for Health Research, Health Technology Assessment Programme.</li>
+                    <li>Costeloe, K., Hardy, P., Juszczak, E., Wilks, M., & Millar, M. R. (2016). Bifidobacterium breve BBG-001 in very preterm infants: a randomised controlled phase 3 trial. Lancet, 387, 649–660. https://doi.org/10.1016/S0140-6736(15)01027-2</li>
+                    <li>Dai, Y., et al. (2025). Bayesian Network Meta-analysis of Probiotics for Preterm Infants. BMC Pediatrics, 25, 237. https://doi.org/10.1186/s12887-025-05469-z.</li>
+                    <li>Deshpande, G., Jape, G., Rao, S., & Patole, S. (2017). Benefits of probiotics in preterm neonates in low-income and medium-income countries: a systematic review of randomised controlled trials. BMJ Open, 7, e017638. https://doi.org/10.1136/bmjopen-2017-017638</li>
+                    <li>Gao, X., Wang, Y., Shi, L., Feng, W., & Yi, K. (2020). Effect and safety of Saccharomyces boulardii for neonatal necrotizing enterocolitis in pre-term infants: a systematic review and meta-analysis. Journal of Tropical Pediatrics, 67(3), 314–320. https://doi.org/10.1093/tropej/fmaa022</li>
+                    <li>Güney-Varal, I., Köksal, N., Özkan, H., Bağcı, O., & Doğan, P. (2017). The effect of early administration of combined multi-strain and multi-species probiotics on gastrointestinal morbidities and mortality in preterm infants... Turkish Journal of Pediatrics, 59(1), 13–19.</li>
+                    <li>Han, J., Ren, Y., Zhang, P., et al. (2025). The effectiveness of treatment with probiotics in preventing necrotizing enterocolitis and related mortality... BMC Gastroenterology, 25, 245. https://doi.org/10.1186/s12876-025-03788-0</li>
+                    <li>JS et al. (ca. 2017). Clinical effects of probiotics in very low birth weight (VLBW) infants: A systematic review and meta-analysis. Advances in Nutrition.</li>
+                    <li>Kulkarni, T., Majarikar, S., Ananthan, A., et al. (2022). Probiotic sepsis in preterm infants: a systematic literature review. European Journal of Pediatrics, 181, 2249–2262. https://doi.org/10.1007/s00431-022-04452-5</li>
+                    <li>Liu, D., et al. (2020). Efficacy and safety of Lactobacillus in preventing NEC in preterm infants. International Journal of Surgery, 76, 79–87. https://doi.org/10.1016/j.ijsu.2020.02.031</li>
+                    <li>Morgan, R. L., et al. (2020). Probiotics Reduce Mortality and Morbidity in Preterm, Low-Birth-Weight Infants: A Systematic Review and Network Meta-analysis of Randomized Trials. Gastroenterology, 159, 467–480.</li>
+                    <li>Nandhini, L. P., Biswal, N., Adhisivam, B., et al. (2016). Synbiotics for decreasing incidence of necrotizing enterocolitis among preterm neonates - a randomized controlled trial. Journal of Maternal-Fetal & Neonatal Medicine, 29(5), 821–825. https://doi.org/10.3109/14767058.2015.1019854</li>
+                    <li>Pammi, M., & Abrams, S. A. (2019). Oral lactoferrin for the treatment of sepsis and necrotizing enterocolitis in neonates. Cochrane Database of Systematic Reviews.</li>
+                    <li>Pammi, M., & Suresh, G. (2020). Enteral lactoferrin supplementation for prevention of sepsis and necrotizing enterocolitis in preterm infants (Review). Cochrane Database of Systematic Reviews.</li>
+                    <li>Rao, S. C., Athalye-Jape, G. K., Deshpande, G. C., et al. (2016). Probiotic Supplementation and Late-Onset Sepsis in Preterm Infants: A Meta-analysis. Pediatrics, 137(3), e20153684. https://doi.org/10.1542/peds.2015-3684</li>
+                    <li>S. S. K., E. P., & A. R. (2024). Systematic review on probiotic supplementation effects in extremely preterm infants. Nutrients, 17(1228).</li>
+                    <li>Sharif, S., et al. (2023). Probiotics to prevent necrotising enterocolitis in very preterm or very low birth weight infants (Review). Cochrane Database of Systematic Reviews.</li>
+                    <li>Sharif, S., Heath, P. T., Oddie, S. J., & McGuire, W. (2022). Synbiotics to prevent necrotising enterocolitis in very preterm or very low birth weight infants (Review). Cochrane Database of Systematic Reviews, Art. No.: CD014067. https://doi.org/10.1002/1465188.CD014067</li>
+                    <li>Source "1-s2.0-S2161831322001399-main.pdf". Systematic review on NEC, LOS, and mortality.</li>
+                    <li>Source "Efficacy of probiotic supplementation...pdf". Systematic review on Bifidobacterium breve BBG-001 for NEC.</li>
+                    <li>Source "MA-03743-02.pdf". Systematic review on NEC, mortality, and late sepsis.</li>
+                    <li>Source "preventing_necrotizing_enterocolitis_by_food.7.pdf". Network meta-analysis on food additives for NEC.</li>
+                    <li>Sun, J., et al. (2021). Network meta-analysis of probiotics for common outcomes in premature infants. Pediatrics.</li>
+                    <li>Tewari, V. V., Dubey, S. K., & Gupta, G. (2015). Bacillus clausii for prevention of late-onset sepsis in preterm infants: a randomized controlled trial. Journal of Tropical Pediatrics, 61(5), 377–385. https://doi.org/10.1093/tropej/fmv050</li>
+                    <li>van den Akker, C. H. P., van Goudoever, J. B., Szajewska, H., et al. (2018). Probiotics for preterm infants: a strain-specific systematic review and network meta-analysis. Journal of Pediatric Gastroenterology and Nutrition, 67(1), 103–122. https://doi.org/10.1097/MPG.0000000000001897</li>
+                    <li>Vievermanns, K., Dierikx, T. H., Oldenburger, N. J., et al. (2025). Effect of probiotic supplementation on the gut microbiota in very preterm infants: a systematic review. Arch Dis Child Fetal Neonatal Ed, 110, F57–F67. https://doi.org/10.1136/archdischild-2023-326691</li>
+                    <li>Wang, H., Meng, X., Xing, S., et al. (2023). Probiotics to prevent necrotizing enterocolitis and reduce mortality in neonates: A meta-analysis. Medicine, 102(8), e32932.</li>
+                    <li>Wang, Y., Florez, I. D., Morgan, R. L., et al. (2023). Probiotics, Prebiotics, Lactoferrin, and Combination Products for Prevention of Mortality and Morbidity in Preterm Infants: A Systematic Review and Network Meta-Analysis. JAMA Pediatrics, 177(11), 1158–1167. https://doi.org/10.1001/jamapediatrics.2023.3849</li>
+                    <li>Zhu, X.-L., et al. (2019). Efficacy and safety of Bifidobacterium in preventing necrotizing enterocolitis (NEC) in preterm infants. International Journal of Surgery, 61, 17–25. https://doi.org/10.1016/j.ijsu.2018.11.026</li>
+                </ul>
+            </div>
+
+        </div>
+
+        <!-- Navigation Controls -->
+        <div class="bg-gray-100 p-4 flex items-center justify-between border-t">
+            <!-- Prev/Next Buttons -->
+            <div class="flex gap-3">
+                <button id="prev-btn" class="nav-button bg-blue-600 text-white px-5 py-2 rounded-lg shadow-md hover:bg-blue-700 disabled:bg-gray-300 disabled:cursor-not-allowed">Previous</button>
+                <button id="next-btn" class="nav-button bg-blue-600 text-white px-5 py-2 rounded-lg shadow-md hover:bg-blue-700 disabled:bg-gray-300 disabled:cursor-not-allowed">Next</button>
+            </div>
+            <!-- Slide Indicator Dots -->
+            <div id="dot-container" class="flex items-center justify-center gap-2">
+                <!-- Dots will be generated by JS -->
+            </div>
+            <!-- Slide Counter -->
+            <div class="text-gray-600 font-medium">
+                Slide <span id="current-slide-num">1</span> of <span id="total-slides-num">12</span>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // --- Element Selection ---
+            const slides = document.querySelectorAll('.slide');
+            const prevBtn = document.getElementById('prev-btn');
+            const nextBtn = document.getElementById('next-btn');
+            const currentSlideNumEl = document.getElementById('current-slide-num');
+            const totalSlidesNumEl = document.getElementById('total-slides-num');
+            const dotContainer = document.getElementById('dot-container');
+
+            // --- State Initialization ---
+            let currentSlide = 0;
+            const totalSlides = slides.length;
+
+            // --- Initialize Dots ---
+            for (let i = 0; i < totalSlides; i++) {
+                const dot = document.createElement('button');
+                dot.classList.add('dot', 'w-3', 'h-3', 'rounded-full', 'bg-gray-300', 'hover:bg-blue-400');
+                dot.dataset.slide = i;
+                dotContainer.appendChild(dot);
+            }
+            const dots = document.querySelectorAll('.dot');
+
+            // --- Core Function to Update View ---
+            function updateView(newSlideIndex) {
+                // Prevent out-of-bounds errors
+                if (newSlideIndex < 0 || newSlideIndex >= totalSlides) {
+                    return;
+                }
+
+                // Hide the old slide
+                slides[currentSlide].classList.add('hidden');
+                // Show the new slide
+                slides[newSlideIndex].classList.remove('hidden');
+                
+                // Update current slide index
+                currentSlide = newSlideIndex;
+                
+                // Update slide number display
+                currentSlideNumEl.textContent = currentSlide + 1;
+                
+                // Update button states
+                prevBtn.disabled = currentSlide === 0;
+                nextBtn.disabled = currentSlide === totalSlides - 1;
+
+                // Update dot states
+                dots.forEach(dot => dot.classList.remove('bg-blue-500'));
+                dots[currentSlide].classList.add('bg-blue-500');
+            }
+
+            // --- Event Listeners ---
+            nextBtn.addEventListener('click', () => {
+                updateView(currentSlide + 1);
+            });
+
+            prevBtn.addEventListener('click', () => {
+                updateView(currentSlide - 1);
+            });
+
+            dotContainer.addEventListener('click', (e) => {
+                if (e.target.matches('.dot')) {
+                    const slideToGo = parseInt(e.target.dataset.slide);
+                    if (slideToGo !== currentSlide) {
+                        updateView(slideToGo);
+                    }
+                }
+            });
+
+            // Keyboard navigation
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'ArrowRight') {
+                    nextBtn.click();
+                } else if (e.key === 'ArrowLeft') {
+                    prevBtn.click();
+                }
+            });
+
+            // --- Initial Setup on Load ---
+            totalSlidesNumEl.textContent = totalSlides;
+            // Set initial state for buttons and dots for the first slide
+            updateView(0); 
+        });
+    </script>
+</body>
+</html>
