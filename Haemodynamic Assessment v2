@@ -1,0 +1,108 @@
+import React, { useState } from 'react'; import { ChevronsLeft, ChevronsRight, HeartPulse, Wind, Droplets, Activity, BrainCircuit, Baby, AlertTriangle, ListOrdered, Target, CheckCircle, HelpCircle, TrendingUp, Search, ShieldCheck, BookOpen } from 'lucide-react'; // --- Data for the Slides --- const slides = [ // Slide 1: Title { type: 'title', title: 'Haemodynamic Assessment & Management of Hypotension', subtitle: 'A Modern Approach for the Preterm Neonate', author: 'Marcus Adams', }, // Slide 2: The Challenge { type: 'list', title: 'The Challenge: Moving Beyond a Single Number', icon: , points: [ 'Management of low blood flow in preterm neonates is complex and challenging.', 'Historically, there has been an over-reliance on mean blood pressure (BP) as the primary trigger for intervention.', 'Standard protocols often overlook the unique underlying pathophysiology of the individual infant.', 'This can lead to the widespread and sometimes inappropriate use of vasoactive medications.' ], note: 'The core issue: We often "treat the number," not the patient.' }, // Slide 3: Correlation vs Causation { type: 'list', title: 'Treat the Patient, Not the Number', icon: , points: [ 'While low BP is associated with complications like IVH and NEC, a direct causal link is unproven.', 'There is no high-quality evidence that simply raising the BP number improves long-term outcomes.', 'In fact, regimented use of antihypotensive therapy is linked to an increased risk of death and neurodevelopmental impairment.', 'A "normal" mean BP can be misleading, masking significant underlying issues.' ], note: 'Focusing on a single metric can be ineffective and potentially harmful.' }, // Slide 4: Core Physiology { type: 'diagram', title: 'The Goal: Optimise Oxygen Delivery', diagram: (
+{/* Cardiac Output */}
+Cardiac Output
+Preload Afterload Contractility Heart Rate
++
+
+{/* Blood Oxygen Content */}
+Blood Oxygen Content
+Haemoglobin O₂ Saturation
+↓
+Effective Tissue Oxygenation
+The ultimate goal of cardiovascular support.
+
+) }, // Slide 5: Preterm Myocardium { type: 'icons', title: 'The Unique Preterm Heart', icon: , items: [ { icon: , text: 'Immature, inefficient contractile fibers.' }, { icon:
+≠
+, text: 'Stiffer muscle, less compliant.' }, { icon: , text: 'Limited cardiac reserve in times of stress.' }, { icon: , text: 'Poor adrenergic innervation & fewer receptors.' }, { icon: , text: 'Predominant vasopressor (constriction) effect from drugs.' }, { icon: , text: 'Different, compromised response to volume loading.' }, ], note: 'It is not just a smaller version of a term heart.' }, // Slide 6: Clinical Phenotype { type: 'list', title: 'Resulting Clinical Phenotype', icon: , points: [ 'Poor tolerance of increased afterload, leading to low cardiac output.', 'Reduced diastolic filling time (due to high HR) can cause pulmonary venous congestion.', 'Vasoactive drugs often cause vasoconstriction rather than improving contractility.', 'Little to no cardiac reserve to handle stressors like sepsis or NEC.', 'A high resting systemic vascular tone is common.' ], note: 'These unique characteristics dictate how preterm infants respond to illness and treatment.' }, // Slide 7: Beyond the Mean { type: 'split', title: 'Looking Beyond the Mean BP', left: { title: 'Systolic BP', content: 'A surrogate for myocardial contractility and stroke volume.', color: 'blue' }, right: { title: 'Diastolic BP', content: 'A surrogate for Systemic Vascular Resistance (SVR).', color: 'red' }, note: 'Example: A mean BP of 30 can be 32/25 (high SVR, poor contractility) or 40/10 (vasodilatory shock). The treatment for each is completely different. Echocardiography is useful to differentiate.' }, // Slide 8: A Better Approach { type: 'process', title: 'A Better, Physiology-Based Approach', steps: [ { icon: , title: 'Step 1: Assess', description: 'Use normative systolic & diastolic BP ranges for gestation.' }, { icon: , title: 'Step 2: Investigate', description: 'Think critically about the underlying cause of the hypotension.' }, { icon: , title: 'Step 3: Target', description: 'Devise a management plan that targets the specific pathophysiology.' }, ] }, // Slide 9: BP Table { type: 'table', title: 'Normative BP Reference Ranges (3rd Centile)', note: 'Data from "Blood Pressure Reference Ranges for Preterm Infants"', headers: ['Gestation', 'Systolic (mmHg)', 'Diastolic (mmHg)', 'Mean (mmHg)'], rows: [ ['24', '32', '15', '26'], ['25', '34', '16', '26'], ['26', '36', '17', '27'], ['27', '38', '17', '27'], ['28', '40', '18', '28'], ['29', '42', '19', '28'], ['30', '43', '20', '29'], ['31', '45', '20', '30'], ['32', '46', '21', '30'], ['33', '47', '22', '30'], ['34', '48', '23', '31'], ['35', '49', '24', '32'], ['36', '50', '25', '32'], ] }, // Slide 10: Targeted Management { type: 'flowchart', title: 'Step 3: Targeted Management Plan', items: [ { problem: 'Low Preload', cause: 'Hypovolemia (e.g., blood loss)', solution: 'Cautious Fluid Resuscitation', color: 'blue' }, { problem: 'High Afterload', cause: 'Pulmonary Hypertension (PPHN)', solution: 'Afterload Reduction (e.g., iNO)', color: 'orange' }, { problem: 'Poor Contractility', cause: 'Myocardial Dysfunction', solution: 'Inotropes (e.g., Dobutamine)', color: 'green' }, { problem: 'Low Afterload', cause: 'Vasodilatory Shock (e.g., Sepsis)', solution: 'Vasopressors (e.g., Noradrenaline)', color: 'red' }, ] }, // Slide 11: Summary { type: 'summary', title: 'Key Takeaways', points: [ { icon: , text: 'Stop treating the number. Mean BP is an unreliable, often misleading, indicator of haemodynamic status.'}, { icon: , text: 'The preterm heart is unique, with limited reserve and a different response to stress and medications.'}, { icon:
+, text: 'Adopt a physiology-based approach: Assess with systolic/diastolic BP, investigate the cause, and target the specific problem.'}, { icon: , text: 'Tailor therapy to the underlying issue—whether it’s preload, afterload, or contractility—for safer, more effective management.'}, ] }, // Slide 12: References { type: 'references', title: 'References', references: [ "Dempsey, E. M., & Barrington, K. J. (2007). Treating hypotension in the preterm infant: when and with what. *Archives of Disease in Childhood-Fetal and Neonatal Edition*, 92(6), F424-F425.", "Zubair, A., & Batton, B. (2020). Blood pressure reference ranges for preterm infants. *Journal of Perinatology*, 40(1), 30-36.", "de Boode, W. P., Singh, Y., & El-Khuffash, A. (2016). The physiologically based approach to the management of neonatal hypotension. *Frontiers in Pediatrics*, 4, 98.", "Giesinger, R. E., & McNamara, P. J. (2016). Hemodynamic instability in the critically ill neonate: An approach to cardiovascular support based on disease pathophysiology. *Seminars in perinatology*, 40(3), 174-188.", "Mullaly R, El-Khuffash AFHaemodynamic assessment and management of hypotension in the preterm, Archives of Disease in Childhood - Fetal and Neonatal Edition 2024;109:120-127." ] } ]; // --- Slide Components --- const TitleSlide = ({ slide }) => (
+{slide.title}
+{slide.subtitle}
+
+{slide.author}
+
+); const ListSlide = ({ slide }) => (
+{slide.icon}
+{slide.title}
+{slide.points.map((point, index) => (
+{point}
+))}
+{slide.note &&
+{slide.note}
+
+}
+); const DiagramSlide = ({ slide }) => (
+{slide.title}
+{slide.diagram}
+); const IconsSlide = ({ slide }) => (
+{slide.icon}
+{slide.title}
+{slide.items.map((item, index) => (
+{item.icon}
+{item.text}
+
+))}
+{slide.note &&
+{slide.note}
+
+}
+); const SplitSlide = ({ slide }) => (
+{slide.title}
+{slide.left.title}
+{slide.left.content}
+
+{slide.right.title}
+{slide.right.content}
+
+{slide.note &&
+{slide.note}
+
+}
+); const ProcessSlide = ({ slide }) => (
+{slide.title}
+{slide.steps.map((step, index) => (
+{React.cloneElement(step.icon, { size: 32 })}
+{step.title}
+{step.description}
+
+{index < slide.steps.length - 1 &&
+} ))}
+); const TableSlide = ({ slide }) => (
+{slide.title}
+{slide.headers.map(header => )} {slide.rows.map((row, rowIndex) => ( {row.map((cell, cellIndex) => ( ))} ))}
+{header}
+{cell}
+{slide.note &&
+{slide.note}
+
+}
+); const FlowchartSlide = ({ slide }) => (
+{slide.title}
+{slide.items.map((item, index) => (
+{item.problem}
+Cause: {item.cause}
+
+{item.solution}
+
+))}
+); const SummarySlide = ({ slide }) => (
+{slide.title}
+{slide.points.map((point, index) => (
+{React.cloneElement(point.icon, { size: 28 })}
+{point.text}
+
+))}
+); const ReferencesSlide = ({ slide }) => (
+{slide.title}
+{slide.references.map((ref, index) => (
+$1') }}>
+))}
+); // --- Main App Component --- export default function App() { const [currentSlide, setCurrentSlide] = useState(0); const goToNext = () => { setCurrentSlide((prev) => (prev + 1) % slides.length); }; const goToPrev = () => { setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length); }; const renderSlide = () => { const slide = slides[currentSlide]; switch (slide.type) { case 'title': return ; case 'list': return ; case 'diagram': return ; case 'icons': return ; case 'split': return ; case 'process': return ; case 'table': return ; case 'flowchart': return ; case 'summary': return ; case 'references': return ; default: return
+Unknown slide type
+; } }; return (
+{/* Slide Container */}
+{renderSlide()}
+{/* Navigation */}
+Prev
+Slide {currentSlide + 1} of {slides.length}
+Next
+); }
