@@ -6,24 +6,43 @@
     <title>File Directory</title>
     <style>
         body {
-            font-family: sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
             margin: 2em;
+            background-color: #f6f8fa;
+            color: #24292e;
+        }
+        h1 {
+            border-bottom: 1px solid #e1e4e8;
+            padding-bottom: 0.3em;
         }
         table {
             width: 100%;
             border-collapse: collapse;
+            border: 1px solid #d0d7de;
+            border-radius: 6px;
+            overflow: hidden;
         }
         th, td {
-            padding: 8px 12px;
-            border: 1px solid #dddddd;
+            padding: 12px 15px;
+            border-bottom: 1px solid #d0d7de;
             text-align: left;
         }
-        th {
-            background-color: #f2f2f2;
+        thead {
+            background-color: #f6f8fa;
+        }
+        tbody tr {
+            background-color: #ffffff;
+        }
+        tbody tr:nth-child(odd) {
+            background-color: #f6f8fa;
+        }
+        tbody tr:hover {
+            background-color: #f0f3f6;
         }
         a {
             text-decoration: none;
-            color: #0366d6;
+            color: #0969da;
+            font-weight: 500;
         }
         a:hover {
             text-decoration: underline;
@@ -41,24 +60,40 @@
             </tr>
         </thead>
         <tbody>
-            </tbody>
+            <!-- File list will be dynamically inserted here by JavaScript -->
+        </tbody>
     </table>
 
     <script>
         // ### Configuration ###
-        const username = 'Marca5914';
+        const username = 'marca5914';
         const repository = 'Presentations';
         // #####################
 
-        const apiUrl = `https://${username}.github.io/${repository}/contents/`;
+        // This API call fetches the contents of the root directory of the repository.
+        const apiUrl = `https://api.github.com/repos/${username}/${repository}/contents/`;
 
         fetch(apiUrl)
-            .then(response => response.json())
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`Network response was not ok: ${response.statusText}`);
+                }
+                return response.json();
+            })
             .then(data => {
                 const tableBody = document.getElementById('fileTable').getElementsByTagName('tbody')[0];
+                
+                // Sort data to show directories first, then sort alphabetically.
+                data.sort((a, b) => {
+                    if (a.type === b.type) {
+                        return a.name.localeCompare(b.name); // Sort alphabetically
+                    }
+                    return a.type === 'dir' ? -1 : 1; // Directories first
+                });
+
                 data.forEach(item => {
-                    // Do not list the index.html file itself
-                    if (item.name === 'index.html') {
+                    // Do not list the index.html file itself in the table.
+                    if (item.name.toLowerCase() === 'index.html') {
                         return;
                     }
 
@@ -66,10 +101,21 @@
                     let fileNameCell = row.insertCell();
                     let fileTypeCell = row.insertCell();
 
+                    // Create the link element.
                     let link = document.createElement('a');
-                    link.href = item.html_url;
+                    
+                    // Construct a relative URL for the link.
+                    let publicUrl;
+                    if (item.type === 'dir') {
+                        // For directories, link to the directory path with a trailing slash.
+                        publicUrl = `${item.name}/`;
+                    } else { // 'file'
+                        // For files, link directly to the file name.
+                        publicUrl = item.name;
+                    }
+
+                    link.href = publicUrl;
                     link.textContent = item.name;
-                    link.target = "_blank"; // Open in a new tab
 
                     fileNameCell.appendChild(link);
                     fileTypeCell.textContent = item.type === 'file' ? 'File' : 'Directory';
@@ -81,7 +127,8 @@
                 let row = tableBody.insertRow();
                 let cell = row.insertCell();
                 cell.colSpan = 2;
-                cell.textContent = 'Error loading file list.';
+                cell.textContent = 'Error loading file list. Check browser console for details.';
+                cell.style.color = 'red';
             });
     </script>
 
