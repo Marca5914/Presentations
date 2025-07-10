@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Directory</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 2em;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 8px 12px;
+            border: 1px solid #dddddd;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        a {
+            text-decoration: none;
+            color: #0366d6;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>File Directory</h1>
+    <table id="fileTable">
+        <thead>
+            <tr>
+                <th>Filename</th>
+                <th>Type</th>
+            </tr>
+        </thead>
+        <tbody>
+            </tbody>
+    </table>
+
+    <script>
+        // ### Configuration ###
+        const username = 'Marca5914';
+        const repository = 'Presentations';
+        // #####################
+
+        const apiUrl = `https://api.github.com/repos/${username}/${repository}/contents/`;
+
+        fetch(apiUrl)
+            .then(response => response.json())
+            .then(data => {
+                const tableBody = document.getElementById('fileTable').getElementsByTagName('tbody')[0];
+                data.forEach(item => {
+                    // Do not list the index.html file itself
+                    if (item.name === 'index.html') {
+                        return;
+                    }
+
+                    let row = tableBody.insertRow();
+                    let fileNameCell = row.insertCell();
+                    let fileTypeCell = row.insertCell();
+
+                    let link = document.createElement('a');
+                    link.href = item.html_url;
+                    link.textContent = item.name;
+                    link.target = "_blank"; // Open in a new tab
+
+                    fileNameCell.appendChild(link);
+                    fileTypeCell.textContent = item.type === 'file' ? 'File' : 'Directory';
+                });
+            })
+            .catch(error => {
+                console.error('Error fetching repository contents:', error);
+                const tableBody = document.getElementById('fileTable').getElementsByTagName('tbody')[0];
+                let row = tableBody.insertRow();
+                let cell = row.insertCell();
+                cell.colSpan = 2;
+                cell.textContent = 'Error loading file list.';
+            });
+    </script>
+
+</body>
+</html>
