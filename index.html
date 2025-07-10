@@ -50,7 +50,7 @@
         const repository = 'Presentations';
         // #####################
 
-        const apiUrl = `https://api.github.com/repos/${username}/${repository}/contents/`;
+        const apiUrl = `https://${username}.github.io/${repository}/contents/`;
 
         fetch(apiUrl)
             .then(response => response.json())
